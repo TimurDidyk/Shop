@@ -6,6 +6,7 @@
 }
 
 .bl-list {
+	position: relative;
     background: white;
     margin-bottom: 10px;
 	width: 500px;
@@ -14,12 +15,12 @@
 
 .bl-bought {
     background: white;
-	width: 200px;
+	width: 300px;
 	font-family: Verdana, sans-serif;
 	font-size: 110%;
 	position: absolute;
 	bottom:	90px;
-	right:	600px;
+	right:	500px;
 }
 .bl-hidname{
 	margin-top: 15px;
@@ -53,11 +54,48 @@
     margin-left: 10px;
 }
 
-/*Кнопки*/
-.bl-label {
-    background: #cdcbcb;
+
+
+.bl-prodinp {
+	visibility: hidden;
+	font-family: Verdana, sans-serif;
+	font-size: 90%;
+	width: 100px;
+	position: absolute;
+	left:0px;
 }
+
+/*Кнопки*/
+
+
+
+.bl-label {
+	position:absolute;
+	left:230px;
+    background: #cdcbcb;
+	margin-top:5px;
+	width: 10px;
+}
+
+.bl-minus {
+	visibility: visible;
+	position:absolute;
+	left:190px;
+	color: white;
+	width: 30px;
+	height: 30px;
+	border: none;
+    background: #FF6347; 
+	border-radius: 30px 30px;
+	box-shadow: 0 -3px firebrick inset;
+	
+}
+.bl-minus:hover { background: firebrick; }
+
 .bl-plus {
+	visibility: visible;
+	position:absolute;
+	left:250px;
 	width: 30px;
 	height: 30px;
 	font-weight: 700;
@@ -73,44 +111,47 @@
 }
 .bl-plus:hover { background: rgb(53, 167, 110); }
 
-.bl-minus1 {
-	color: white;
-	width: 30px;
-	height: 30px;
+.bl-buy {
+	visibility: visible;
+	position:absolute;
+	left:330px;
+	height: 32px;
 	border: none;
-    background: #FF6347; 
-	margin-left: 59px;
-	border-radius: 30px 30px;
-	box-shadow: 0 -3px firebrick inset;
-	
+	border-radius: 5px 5px;
+	box-shadow: 0 -3px #808080 inset;
 }
-.bl-minus1:hover { background: firebrick; }
-.bl-minus2 {
-	color: white;
-	width: 30px;
-	height: 30px;
+.bl-buy:hover { background: #808080; }
+
+.bl-notbuy {
+	visibility: hidden;
+	position: absolute;
+	left:360px;
+	height: 32px;
 	border: none;
-    background: #FF6347;
-    margin-left: 77px;	
-	border-radius: 30px 30px;
-	box-shadow: 0 -3px firebrick inset;
+	border-radius: 5px 5px;
+	box-shadow: 0 -3px #808080 inset;
 }
-.bl-minus2:hover { background: firebrick; }
-.bl-minus3 {
+.bl-notbuy:hover { background: #808080; }
+
+.bl-x {
+	visibility: visible;
+	position:absolute;
+	left:410px;
 	color: white;
-	width: 30px;
-	height: 30px;
+	height: 32px;
+	width: 32px;
 	border: none;
-    background: #FF6347;
-    margin-left: 110px;
-	border-radius: 30px 30px;
-    box-shadow: 0 -3px firebrick inset;	
+	background: #DC143C;
+	border-radius: 6px 6px;
+	box-shadow: 0 -3px #A52A2A inset;
 }
-.bl-minus3:hover { background: firebrick; }
+.bl-x:hover { background: firebrick; }
+
 .bl-product {
+	position: relative;
 	font-family: Verdana, sans-serif;
 	font-size: 110%;
-	margin-bottom: 10px;
+	margin-top: 20px;
 	
 }
 .in-tov {
@@ -129,26 +170,72 @@
 	margin-left: -4px;	
 }
 .bl-add:hover { background: #008B8B; }
-.bl-x {
-	color: white;
-	height: 32px;
-	width: 32px;
-	border: none;
-	background: #DC143C;
-	border-radius: 6px 6px;
-	box-shadow: 0 -3px #A52A2A inset;
-}
-.bl-x:hover { background: firebrick; }
 
-.bl-buy {
-	height: 32px;
-	border: none;
-	border-radius: 5px 5px;
-	box-shadow: 0 -3px #808080 inset;
-}
-.bl-buy:hover { background: #A9A9A9; }
+
 .bl-title {
 	margin-left:10px;
 	margin-top:10px;
 	margin-bottom:10px;
+}
+
+
+/*Тултіпи*/
+.minustooltip::after {
+  font-size: 12px;
+  background: #A113B0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  content: attr(data-tooltip); 
+  margin-top: -30px;
+  opacity: 0;
+  padding: 3px 7px;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index:2;
+}
+.minustooltip:hove::after {
+	opacity: 1;
+    visibility: visible;
+}
+
+.deltooltip::after {
+  font-size: 12px;
+  background: #A113B0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  content: attr(data-tooltip); 
+  margin-top: -30px;
+  opacity: 0;
+  padding: 3px 7px;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index:2;
+}
+.deltooltip:hove::after {
+	opacity: 1;
+    visibility: visible;
+}
+
+.plustooltip::after {
+  font-size: 12px;
+  background: #A113B0;
+  border-radius: 5px;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+  color: #FFF;
+  content: attr(data-tooltip); 
+  margin-top: -30px;
+  opacity: 0;
+  padding: 3px 7px;
+  position: absolute;
+  visibility: hidden;
+  transition: all 0.4s ease-in-out;
+  z-index:2;
+}
+.plustooltip:hove::after {
+	opacity: 1;
+    visibility: visible;
 }
