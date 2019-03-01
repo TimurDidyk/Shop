@@ -9,7 +9,8 @@ $(document).ready(function(){
        //  $(cloned).appendTo(".bl-product");
        //  $(".in-tov").val("").focus();
 	//});
-	
+
+
 	$(".prod").click(function(){
 		$(this).parent().find(".bl-prodinp").css('visibility', 'visible');
 		$(this).parent().find(".prod").css('visibility', 'hidden');

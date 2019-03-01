@@ -195,7 +195,7 @@
   transition: all 0.4s ease-in-out;
   z-index:2;
 }
-.minustooltip:hove::after {
+.minustooltip:hover::after {
 	opacity: 1;
     visibility: visible;
 }
@@ -215,7 +215,7 @@
   transition: all 0.4s ease-in-out;
   z-index:2;
 }
-.deltooltip:hove::after {
+.deltooltip:hover::after {
 	opacity: 1;
     visibility: visible;
 }
@@ -235,7 +235,7 @@
   transition: all 0.4s ease-in-out;
   z-index:2;
 }
-.plustooltip:hove::after {
+.plustooltip:hover::after {
 	opacity: 1;
     visibility: visible;
 }
